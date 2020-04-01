@@ -1,10 +1,12 @@
-interface Pizza {
+interface Sizes {
+	sizes: string[];
+}
+
+interface Pizza extends  Sizes {
 	name: string;
 	sizes: string[];
 	getAvailableSizes(): void;
 };
-
-type getAvailableSizes = () => void;
 
 let pizza: Pizza;
 
