@@ -1,8 +1,10 @@
-let sizes: number[];
+type Size = 'small' | 'medium' | 'large';
+type Callback = (size: Size) => void;
 
-sizes = [1, 2, 3];
+let pizzaSize: Size = 'small';
 
-let toppings: Array<string>;
+const selectSize: Callback = x => {
+	pizzaSize = x;
+}
 
-toppings = ['pepperoni', 'tomato', 'bacon'];
-
+selectSize('medium')
