@@ -1,14 +1,20 @@
 interface Pizza {
 	name: string;
-	sizes: string[]
+	sizes: string[];
+	getAvailableSizes(): void;
 };
+
+type getAvailableSizes = () => void;
 
 let pizza: Pizza;
 
-function createPizza(name: string, sizes: string[]) {
+function createPizza(name: string, sizes: string[]): Pizza {
 	return {
 		name,
-		sizes
+		sizes,
+		getAvailableSizes() {
+			return this.sizes;
+		}
 	};
 }
 pizza = createPizza('Pepperoni', ['small', 'medium']);
