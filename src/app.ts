@@ -1,6 +1,11 @@
-function orderError(error: string) {
-	throw new Error(error)
-	// never going to return a value!
-	}
+let coupon: string | null = 'pizza25';
 
-	orderError('Something went wrong!')
+function removeCoupon(): void {
+	coupon = null;
+}
+
+console.log(coupon);
+
+removeCoupon();
+
+console.log(coupon);
