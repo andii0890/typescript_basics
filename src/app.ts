@@ -1,14 +1,15 @@
 class Pizza {
 	public toppings: string[] = []
 
-	constructor(private name: string){}
+	constructor(readonly name: string){}
 
 	public addTopping(topping: string){
 		this.toppings.push(topping);
 	}
 }
+
 const pizza = new Pizza('pepperoni');
 
 pizza.addTopping('pepperoni');
 
-console.log(pizza);
+pizza.name = 'ABC' //throw an error, we can not modify it
