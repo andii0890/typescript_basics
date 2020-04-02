@@ -1,4 +1,4 @@
-class Sizes {
+abstract class Sizes {
 	constructor(public sizes: string[]) {}
 
 	//read
@@ -11,16 +11,6 @@ class Sizes {
 	}
 }
 
-const sizes = new Sizes(['small', 'medium']);
-
-//invoke getter 
-console.log(sizes.availableSizes)
-//invoke setter
-
-sizes.availableSizes = ['medium','large']
-console.log(sizes.availableSizes);
-
-
 class Pizza extends Sizes {
 	public toppings: string[] = []
 
@@ -32,6 +22,7 @@ class Pizza extends Sizes {
 		this.toppings.push(topping);
 	}
 }
+
 
 const pizza = new Pizza('pepperoni', ['small', 'medium']);
 console.log(pizza.availableSizes)
