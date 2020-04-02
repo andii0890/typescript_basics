@@ -1,3 +1,26 @@
+class Sizes {
+	constructor(public sizes: string[]) {}
+
+	//read
+	set availableSizes(sizes: string[]) {
+		this.sizes = sizes;
+	}
+	//write	
+	get availableSizes() {
+		return this.sizes;
+	}
+}
+
+const sizes = new Sizes(['small', 'medium']);
+
+//invoke getter 
+console.log(sizes.availableSizes)
+//invoke setter
+
+sizes.availableSizes = ['medium','large']
+console.log(sizes.availableSizes);
+
+
 class Pizza {
 	public toppings: string[] = []
 
@@ -12,4 +35,3 @@ const pizza = new Pizza('pepperoni');
 
 pizza.addTopping('pepperoni');
 
-pizza.name = 'ABC' //throw an error, we can not modify it
